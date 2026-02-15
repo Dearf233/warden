@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "emeraldcollector",
+  "version": "1.0.0",
+  "name": "Emerald Collector",
+  "description": "Automatically collects emerald items by moving towards them",
+  "authors": [
+    "YourName"
+  ],
+  "contact": {
+    "homepage": "https://example.com/",
+    "sources": "https://github.com/yourusername/emerald-collector"
+  },
+  "license": "MIT",
+  "icon": "assets/emeraldcollector/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.yourname.emeraldcollector.EmeraldCollectorMod"
+    ],
+    "client": [
+      "com.yourname.emeraldcollector.EmeraldCollectorClient"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
