@@ -33,16 +33,10 @@ jobs:
       with:
         name: emerald-collector-mod
         path: build/libs/*.jar
-```
-
-**第4步：** 滚动到底部，点击 **"Commit changes"**
-
-**第5步：** 点击 **"Actions"** 标签，你会看到编译开始了！⚙️
-
----
-
-## 📸 关键提示：
-
-输入 `.github/workflows/build.yml` 时，GitHub会自动创建文件夹结构，你会看到路径分段显示：
-```
-.github / workflows / build.yml
+        
+    - name: Upload build logs on failure
+      if: failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-logs
+        path: build/reports/
