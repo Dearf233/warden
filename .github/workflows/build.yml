@@ -1,0 +1,48 @@
+name: Build Emerald Collector Mod
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'gradle'
+    
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: Build with Gradle
+      run: ./gradlew build
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: emerald-collector-mod
+        path: build/libs/*.jar
+```
+
+**第4步：** 滚动到底部，点击 **"Commit changes"**
+
+**第5步：** 点击 **"Actions"** 标签，你会看到编译开始了！⚙️
+
+---
+
+## 📸 关键提示：
+
+输入 `.github/workflows/build.yml` 时，GitHub会自动创建文件夹结构，你会看到路径分段显示：
+```
+.github / workflows / build.yml
