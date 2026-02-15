@@ -78,7 +78,7 @@ public class EmeraldCollectorClient implements ClientModInitializer {
         Box searchBox = new Box(
             playerPos.x - DETECTION_RADIUS,
             playerPos.y - DETECTION_RADIUS,
-            playerPos.y + DETECTION_RADIUS,
+            playerPos.z - DETECTION_RADIUS,
             playerPos.x + DETECTION_RADIUS,
             playerPos.y + DETECTION_RADIUS,
             playerPos.z + DETECTION_RADIUS
